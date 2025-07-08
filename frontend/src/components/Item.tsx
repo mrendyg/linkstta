@@ -12,7 +12,7 @@ const Item = () => {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        const fetchBrands = async () => {
+        const fetchLinks = async () => {
             try {
                 const linksData = await getListLink();
                 setLinks(linksData);
@@ -23,7 +23,7 @@ const Item = () => {
                 setLoading(false);
             }
         };
-        fetchBrands();
+        fetchLinks();
     }, []);
 
     if (loading) return <div>Cargando...</div>;

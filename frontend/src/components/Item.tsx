@@ -30,36 +30,24 @@ const Item = () => {
     if (error) return <div>{error}</div>
     if (links.length === 0) return <div>No se encuentran Links</div>
     return( 
-        <div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>
-                            ID
-                        </th>
-                        <th>
-                            name
-                        </th>
-                        <th>
-                            url
-                        </th>
-                        <th>
-                            image
-                        </th>
-                    </tr>
-                </thead>
-               
+        <div className="inline-flex">
+           
                 {links.map(link => (
-                    <tr key={link.id}>
-                        <td>{link.id}</td>
-                        <td>{link.name}</td>
-                        <td>{link.url}</td>
-                        <td>{link.image}</td>
-                    </tr>
+                    <div key={link.id}>
+                        <div className="flex-block">
+                        <p>{link.name}</p>
+                        <div className="w-[10rem]">
+                        <a href={link.url} target="_blank">
+                            <img src={link.image}/>
+                        </a> 
+                        </div>
+                        </div>
+                        
+                    </div>
                
 
                 ))}
-            </table>
+            
         </div>
     )
 }

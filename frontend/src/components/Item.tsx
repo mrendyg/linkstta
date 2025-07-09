@@ -29,7 +29,7 @@ const Item = () => {
     if (links.length === 0) return <div>No se encuentran Links</div>
     return (
   <div className="flex flex-wrap justify-center gap-6 p-4">
-    {links.map(link => (
+    {links.sort((a, b) => a.id - b.id).map(link => (
       <div 
         key={link.id}
         className="group relative w-56 h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white border border-gray-100"
